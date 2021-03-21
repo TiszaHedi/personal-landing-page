@@ -1,0 +1,50 @@
+/**
+ * OVERVIEW
+ *
+ * The project is divided into separate style sheets:
+ *
+ * bootstrap.css............CSS rules that control the layout of the website.
+ * base.css..............Global rules and helpers.
+ * components.css........The CSS of components that build up the site.
+ */
+
+
+/**
+ * TABLE OF CONTENTS
+ *
+ * TYPOGRAPHY
+ * Headings, links and buttons............Typography styles.
+ */
+
+
+
+
+
+/*------------------------------------*\
+  #TYPOGRAPHY
+\*------------------------------------*/ 
+
+@font-face {
+  font-family: myFirstFont;
+  src: url('../font/bigilla/Bigilla-Bold.otf');
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+h1, h2, h3, .header__text, .skills { font-family: myFirstFont; }
+
+
+h1 { font-size: 4rem; }
+
+h2 { font-size: 3.25rem; }
+
+
+@media (min-width: 991px) {
+
+  h1 { font-size: 10rem; }
+
+  h2 { font-size: 3.75rem; }
+
+}

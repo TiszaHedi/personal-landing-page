@@ -1,0 +1,295 @@
+/**
+ * OVERVIEW
+ *
+ * This file describes the components that build up the site.
+ * From the inner layout to the font color, etc.
+ *
+ */
+
+
+ /**
+ * TABLE OF CONTENTS
+ *
+ * 1. BACKGROUND
+ *
+ * 2. BUTTON
+ *
+ * 3. HEADER
+ *
+ * 4. ABOUT
+ *
+ * 5. PORTFOLIO
+ *
+ * 6. SKILLS
+ *
+ * 7. CONTACT
+ *
+ */
+
+
+
+
+
+
+
+/*------------------------------------*\
+  #BACKGROUND
+\*------------------------------------*/
+
+
+
+body {
+  background-color: #231F38;
+  color: white;
+  background-image: url('../assets/background-decoration.svg'), url('../assets/background-first-ellipse.svg'), url('../assets/background-second-ellipse.svg'), url('../assets/background-third-ellipse.svg');
+  background-position: center top, right top -165px, left 0px top 1100px, right bottom;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+
+
+
+/*------------------------------------*\
+  #BUTTON
+\*------------------------------------*/
+
+.button {
+  display:      inline-block;
+  background: rgba(255, 255, 255, 0.1);
+  border:       1px solid rgba(255, 255, 255, 0.2);
+  padding:      8px 12px;
+  color:      white;
+  margin-right: 16px;
+  transition:   all .3s ease;
+}
+
+
+  .button:hover {
+    background:    rgba(255, 255, 255, 0.3);
+    color:         white;
+    text-decoration: none;
+  }
+
+
+
+
+
+/*------------------------------------*\
+  #HEADER
+\*------------------------------------*/
+
+header {
+  font-size:  30px;
+  text-align: center;
+}
+
+  .header__text {
+    padding: 3rem 0;
+  }
+
+  .header__profile-picture-wrapper {
+    padding-bottom: 17px;
+    position:       relative;
+  }
+
+  .header__profile-picture-contanier {
+    width:      calc(100% - 17px);
+    max-height: 679px;
+    overflow:   hidden;
+    float:      right;
+  }
+
+  .header__profile-picture-contanier::before {
+    background:      url('../assets/profile-picture-background.svg') no-repeat left bottom;
+    background-size: cover;
+    content:         '';
+    display:         block;
+    height:          95%;
+    width:           calc(90% - 15px);
+    left:            15px;
+    position:        absolute;
+    bottom:          0;
+    z-index:         -1;
+  }
+
+
+@media (min-width: 768px) {
+
+  header {
+    text-align: left;
+  }
+
+  .header__profile-picture-wrapper {
+    padding-bottom: 27px;
+  }
+
+  .header__profile-picture-contanier {
+    width:      calc(100% - 27px);
+  }
+
+}
+
+
+
+
+/*------------------------------------*\
+  #ABOUT
+\*------------------------------------*/
+
+.about {
+  padding:    3rem 0 5rem;
+  font-size:  1rem;
+  text-align: justify;
+}
+
+
+@media (min-width: 768px) {
+
+  .about {
+    padding:   12rem 0;
+    font-size: 1.25rem;
+  }
+
+}
+
+
+
+
+/*------------------------------------*\
+  #PORTFOLIO
+\*------------------------------------*/
+
+.portfolio h2 {
+  margin-bottom: 3rem;
+}
+
+.portfolio__box {
+  margin-bottom: 120px;
+}
+
+
+.portfolio__image-wrapper {
+  position:       relative;
+  padding-bottom: 17px;
+}
+
+.portfolio__image-container {
+  width:    calc(100% - 17px);
+  overflow: hidden;
+  float:    left;
+}
+
+
+.portfolio__image-container::before {
+  background:      url('../assets/images-background.svg') no-repeat right bottom;
+  background-size: cover;
+  content:         '';
+  display:         block;
+  height:          95%;
+  right:           15px;
+  position:        absolute;
+  bottom:          0;
+  width:           90%;
+  z-index:         -1;
+}
+
+
+@media (min-width: 768px) {
+
+  .portfolio h2 {
+    margin-bottom: 6rem;
+  }
+
+    .portfolio__image-wrapper {
+      padding-bottom: 27px;
+    }
+
+    .portfolio__image-container {
+      width:    calc(100% - 27px);
+    }
+
+      .portfolio__box--text-w-p {
+        padding-left: 1.5rem;
+      }
+
+}
+
+
+
+
+
+/*------------------------------------*\
+  #SKILLS
+\*------------------------------------*/
+
+.skills {
+  margin: 3rem 0 6rem;
+}
+
+  .marquee {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+    .marquee__item {
+      color: rgba(255,255,255,.2);
+      text-align: center;
+      white-space: no-wrap;
+      display: inline-block;
+      animation: marquee 20s linear infinite;
+    }
+
+    .marquee:hover .marquee__item { animation-play-state: paused; }
+    
+      .marquee span { 
+        display: inline-block;
+        margin: 0 1rem; 
+        font-size: 40px;
+      }
+
+      .marquee span:hover {
+        color: white;
+      }
+  
+
+@keyframes marquee {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+}
+
+
+@media (min-width: 768px) {
+
+  .skills {
+    margin: 12rem 0;
+  }
+
+  .skills h2 {
+    margin-bottom: 3rem;
+  }
+
+  .marquee span {
+    font-size: 6.25rem;
+    margin: 0 3.75rem;
+  }  
+
+}
+
+
+
+/*------------------------------------*\
+  #CONTACT
+\*------------------------------------*/
+
+.contact {
+  text-align: center;
+}
+
+.contact a {
+  display: inline-block;
+  padding: 2rem 1rem;
+  color: white;
+  font-size: 20px;
+}
